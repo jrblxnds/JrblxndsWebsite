@@ -46,10 +46,10 @@ const SERVICES = [
 ];
 
 const TIME_SLOTS = [
-  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM"
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"
 ];
 
-const FIXED_ADDRESS = "4854 Bathurst Street, Room 410";
+const FIXED_ADDRESS = "Bathurst & Finch";
 
 export default function BookingSection() {
   const [selectedDate, setSelectedDate] = useState<Date>(startOfToday());
@@ -411,12 +411,12 @@ export default function BookingSection() {
                   <div className="space-y-6">
                     <div className="bg-red-600/10 border border-red-600/30 p-6">
                       <h4 className="text-red-600 font-black uppercase tracking-widest flex items-center gap-2 mb-3">
-                        <Info className="w-5 h-5" /> Arrival Instructions
+                        <Info className="w-5 h-5" /> Location Instructions
                       </h4>
                       <p className="text-gray-300 text-sm leading-relaxed">
-                        To ensure a smooth and private experience, please call me directly when you arrive. 
-                        We kindly ask that you do not use the buzzer or enter through the front lobby. 
-                        I will come down to meet you!
+                        Exact address will be provided upon booking confirmation. 
+                        Once your appointment is booked, please send a screenshot of your booking to 
+                        <span className="text-white font-bold ml-1">@jrblxndz</span> on Instagram to receive the exact address.
                       </p>
                     </div>
 

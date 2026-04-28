@@ -23,9 +23,9 @@ export default function ContactSection() {
                 <Phone className="w-5 h-5" />
                 <span>647 783 4264</span>
               </a>
-              <a href="mailto:jrblxndz@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-red-500 transition-colors">
+              <a href="mailto:jrblxnds@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-red-500 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>jrblxndz@gmail.com</span>
+                <span>jrblxnds@gmail.com</span>
               </a>
             </div>
           </div>

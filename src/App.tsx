@@ -12,6 +12,7 @@ import PolicySection from "./components/PolicySection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import AdminDashboard from "./components/AdminDashboard";
+import PortfolioGallery from "./components/PortfolioGallery";
 import ScrollToTop from "./components/ScrollToTop";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { auth } from "./firebase-config";
@@ -24,7 +25,11 @@ export default function App() {
   const [isAuthReady, setIsAuthReady] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
 
-  const ADMIN_EMAIL = "jrblxndz@gmail.com";
+  const ADMIN_EMAILS = ["jrblxnds@gmail.com", "jrblxndz@gmail.com"];
+
+  const isAuthorized = user?.email && ADMIN_EMAILS.some(
+    (email) => email.toLowerCase().trim() === user.email.toLowerCase().trim()
+  );
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -87,7 +92,7 @@ export default function App() {
     <div className="bg-black min-h-screen text-white selection:bg-red-600 selection:text-white">
       <MainNavbar />
       {user ? (
-        user.email === ADMIN_EMAIL ? (
+        isAuthorized ? (
           <AdminDashboard />
         ) : (
           <div className="min-h-screen flex items-center justify-center p-6">
@@ -149,11 +154,12 @@ export default function App() {
       <MainNavbar />
       <main>
         <MainHero />
+        <AboutSection />
         <ServiceHighlights />
         <ServiceList />
+        <PortfolioGallery />
         <BookingSection />
         <PolicySection />
-        <AboutSection />
         <ContactSection />
       </main>
       
